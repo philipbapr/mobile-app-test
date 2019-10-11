@@ -10,6 +10,7 @@ The task is build messenger system, the application can do 2 side conversation b
 5. Make sure the code is clean and able to build on android and ios.
 6. Using third party like Ignite it's ok.
 7. Do not commit on this repository. You must fork the test and submit pull request after you complete the test.
+8. Screen shot every page you made and attach it on the Readme, and also write short description about the page.
 
 ## Assessment Point
 1. Code quality, clean, good state management = 50%
