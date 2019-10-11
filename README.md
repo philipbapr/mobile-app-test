@@ -6,7 +6,7 @@ The task is build messenger system, the application can do 2 side conversation b
 1. The system can do 2 side conversation
 2. No need to have authentication before doing the conversation, just insert username or mobile phone number as identifier.
 3. For the backend side you can use anything, firebase also ok.
-4. Use Redux, Redux Saga
+4. Use Redux, Redux Saga or Redux Thunk for state management
 5. Make sure the code is clean and able to build on android and ios.
 6. Using third party like Ignite it's ok.
 7. Do not commit on this repository. You must fork the test and submit pull request after you complete the test.
