@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TextInput, Button, Dimensions } from 'react-native'
 import { connect } from 'react-redux'
+import {sendChat} from '../store/action'
 
 const mapStateToProps = state => {
     return {
@@ -9,13 +10,14 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-
+    sendChat
 }
 
 const ChatRoom = (props) => {
     const {params} = props.navigation.state
-
+    let {height, width} = Dimensions.get('screen')
     const [conversation, setConversation] = useState(null)
+    const [chatInput, setChatInput] = useState('')
 
     useEffect(() => {
         if(params.partner.chat.length > 0 || props.loggedUser.chat.length > 0){
@@ -42,28 +44,43 @@ const ChatRoom = (props) => {
                 setConversation(ourChat)
             }
         }
-    },[props.users])
+    },[])
     
 
 
 
     return (
-        <View>
+        <View style={{height: height/1.2}}>
             {
                 conversation &&
                 conversation.map((msg, index) => {
                     if(msg.author === props.loggedUser.username){
                         return (
-                            <Text key={index} style={{margin : 10, backgroundColor: 'lightgrey', padding : 5, textAlign : 'right', borderRadius: 10}}>{new Date(msg.date).toLocaleTimeString()}, {msg.message}</Text>
+                            <View key={index} style={{flexDirection: "row-reverse", justifyContent:'flex-start', alignItems: 'center', padding: 5}}>
+                                <Text>:  {msg.author}</Text>
+                                <Text style={{margin : 5, backgroundColor: 'lightgrey', padding : 10, borderRadius: 10}}>{msg.message}</Text>
+                            </View>
                         )
                     } else {
                         return (
-                            <Text key={index} style={{margin : 10, backgroundColor: 'lightgreen', padding : 5, borderRadius: 10}}>{msg.message}, {new Date(msg.date).toLocaleTimeString()}</Text>
+                            <View key={index} style={{flexDirection: "row", justifyContent:'flex-start', alignItems: 'center', padding: 5}}>
+                                <Text>{msg.author}  :</Text>
+                                <Text style={{margin : 5, backgroundColor: 'lightgreen', padding : 10, borderRadius: 10}}>{msg.message}</Text>
+                            </View>
                         )
                     }
                 })
             }
-
+            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', backgroundColor: 'white', position: 'absolute', padding: 10, width, bottom: 0}}>
+                <TextInput onChangeText={(text) => {
+                    setChatInput(text)
+                }} placeholder="" value={chatInput} style={{borderColor : 'grey', borderWidth: 1, borderRadius: 5, margin: 10, width: width/1.2, height: height/15}}/>
+                <Button title=">" onPress={async () => {
+                    await props.sendChat(chatInput, props.loggedUser.username, params.partner.username)
+                    props.navigation.navigate('chatRoom', {partner : params.partner})
+                    setChatInput('')
+                }}/>
+            </View>
         </View>
     )
 }
