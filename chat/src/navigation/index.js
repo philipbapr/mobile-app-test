@@ -17,5 +17,10 @@ export default createAppContainer(createStackNavigator({
             header:null
         }
     },
-    ChatRoom : ChatRoomScreen
+    ChatRoom : {
+        screen : ChatRoomScreen,
+        navigationOptions : {
+            headerTitle : ''
+        }
+    }
   }));

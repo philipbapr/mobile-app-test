@@ -5,7 +5,7 @@ export function getUsers(currentUser){
         db.collection('users').onSnapshot(function (doc){
             let users = []
             doc.forEach((doc) => {
-                if(doc.data().username !== currentUser.username){
+                if(doc.data().username !== currentUser){
                     users.push(doc.data())
                 }
             })

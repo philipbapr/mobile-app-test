@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {getUsers}
 
 const Home = (props) => {
-    console.log(props.navigation, '???????????????????')
+    console.log(props.users, '???????????????????')
     const [refreshing, setRefreshing] = useState(false)
 
     const onRefresh = () => {
@@ -31,10 +31,11 @@ const Home = (props) => {
                     props.users && 
                     props.users.map((user, index) => {
                         return (
-                            <TouchableHighlight key={index} onPress={() => props.navigation.navigate('ChatRoom', {partnerUsername : user.username})}>
+                            <TouchableHighlight key={index} onPress={() => props.navigation.navigate('ChatRoom', {partner : user})}>
                                 <View style={{margin: 10, paddingBottom: 10, borderBottomColor: 'grey', borderBottomWidth: 3, flex: 1, flexDirection: 'row', justifyContent: "space-between" }}>
                                     <Text>{user.username}</Text>
                                         {
+
                                             user.status 
                                             && 
                                             <Text style={{padding: 5, backgroundColor: 'green', borderRadius: 50, color: 'white'}}> ONLINE </Text>
