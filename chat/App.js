@@ -24,19 +24,19 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import LandingPage from './src/components/LandingPage'
+// import LandingPage from './src/components/LandingPage'
 
 import {Provider} from 'react-redux'
 import store from './src/store/index.js'
+import Navigation from './src/navigation'
 
 const App: () => React$Node = () => {
 
   return (
     <Provider store={store}>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <LandingPage/>
-      </SafeAreaView>
+      {/* <SafeAreaView> */}
+        <Navigation/>
+      {/* </SafeAreaView> */}
     </Provider>
   );
 };

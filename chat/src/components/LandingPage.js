@@ -7,6 +7,8 @@ import {
 } from '../store/action'
 import Home from './Home'
 
+// import Navigation from '../navigation/index'
+
 let mapStateToProps = state => {
     return {
         ...state
@@ -27,9 +29,9 @@ const LandingPage = (props) => {
     useEffect(() => {
         if(!props.users && props.loggedUser){
             props.getUsers(props.loggedUser)
-            console.log('---------------')
-        }
-    })
+        } 
+        console.log('---------------')
+    }, [])
 
     if(!props.loggedUser){
         return (
@@ -44,7 +46,8 @@ const LandingPage = (props) => {
             </View>
         )
     } else {
-        return <Home/>
+        props.navigation.navigate('Home')
+        return null
     }
 }
 
