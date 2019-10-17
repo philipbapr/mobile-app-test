@@ -15,6 +15,17 @@ export default function reducer (state = initState, action){
                 ...state,
                 loggedUser : action.payload
             }
+        case 'clear session' : 
+            return {
+                ...state,
+                loggedUser : null,
+                users : null
+            }
+        case 'send chat' : 
+            return {
+                ...state,
+                loggedUser : action.payload
+            }
         default:
             return state
     }
