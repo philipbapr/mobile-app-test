@@ -46,7 +46,7 @@
 
     - if there any problems like
 
-            //cannot connect
+            error Failed to install the app. Make sure you have an Android emulator running or a device connected.
         
     - make sure you have access to your android device or android emulator.
 
