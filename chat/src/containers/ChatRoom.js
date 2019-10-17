@@ -69,10 +69,6 @@ const ChatRoom = (props) => {
                                     name : item.author,
                                     message : item.message
                                 }}/>
-                                // <View key={index} style={{flexDirection: "row-reverse", justifyContent:'flex-start', alignItems: 'center', padding: 5}}>
-                                //     <Text>:  {item.author}</Text>
-                                //     <Text style={{margin : 5, backgroundColor: 'lightgrey', padding : 10, borderRadius: 10}}>{item.message}</Text>
-                                // </View>
                             )
                         } else {
                             return (
@@ -82,10 +78,6 @@ const ChatRoom = (props) => {
                                     name : item.author,
                                     message : item.message
                                 }}/>
-                                // <View key={index} style={{flexDirection: "row", justifyContent:'flex-start', alignItems: 'center', padding: 5}}>
-                                //     <Text>{item.author}  :</Text>
-                                //     <Text style={{margin : 5, backgroundColor: 'lightgreen', padding : 10, borderRadius: 10}}>{item.message}</Text>
-                                // </View>
                             )
                         }
                     }}

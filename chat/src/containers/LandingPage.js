@@ -41,6 +41,14 @@ const LandingPage = (props) => {
         }
     }, [])
 
+    const action = () => {
+        setLoading(true)
+        props.loginUser(username)
+        props.getUsers(username)
+        setUsername('')
+        setLoading(false)
+    }
+
     if(!props.loggedUser){
         return (
             <View>
@@ -61,11 +69,7 @@ const LandingPage = (props) => {
                             buttonTitle : "login",
                             disabledButton : loading,
                             triggerFunction : () => {
-                                setLoading(true)
-                                props.loginUser(username)
-                                props.getUsers(username)
-                                setUsername('')
-                                setLoading(false)
+                                action()
                             }
                         }}/>
 
