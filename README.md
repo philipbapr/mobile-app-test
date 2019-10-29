@@ -1,14 +1,14 @@
 # Mobile Application Developer take home test
 
-The task is build messenger system, the application can do 2 side conversation between device. 
+The task is building photobooth apps, the application can do uploading and displaying uploaded file. The apps should notify the user after the uploading process already complete. It is not required to have login authentication, we don't focus on that. But you can use FCM with your phone credentials.
 
 ## Requirement
-1. The system can do 2 side conversation
-2. No need to have authentication before doing the conversation, just insert username or mobile phone number as identifier.
-3. For the backend side you can use anything, firebase also ok.
+1. The system can upload multiple file at the same time. targeted 100 photos.
+2. The system must have FCM notification.
+3. For the backend side you can use anything you want, firebase also ok.
 4. Use Redux, Redux Saga or Redux Thunk for state management
 5. Make sure the code is clean and able to build on android and ios.
-6. Using third party like Ignite it's ok.
+6. Using third party like Ignite it's ok. 
 7. Do not commit on this repository. You must fork the test and submit pull request after you complete the test.
 8. Screen shot every page you made and attach it on the Readme, and also write short description about the page.
 
