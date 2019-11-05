@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "986739111033",
+    "firebase_url": "https://ogawaapp-ef8ff.firebaseio.com",
+    "project_id": "ogawaapp-ef8ff",
+    "storage_bucket": "ogawaapp-ef8ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986739111033:android:c560e2c927025429",
+        "android_client_info": {
+          "package_name": "com.victory.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986739111033-lmdh55alt670nkdphfllh0omnkihaoc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf7_F3Pt74h10bCIs_k3Q5kEc3gALD8gU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986739111033-lmdh55alt670nkdphfllh0omnkihaoc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
