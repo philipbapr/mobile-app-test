@@ -59,44 +59,42 @@ class cameraRoll extends React.Component {
             <FlatList
                 data={this.formatData(this.state.photos, numColumns)}
                 style={styles.container}
-                renderItem={this.renderItem}
+                renderItem={this.renderItem()}
                 numColumns={numColumns}
             />
         )
     }
 
-    // Uploading image cuk
+    // Uploading image 
     formData() {
         this.props.getPhotos(this.state.photos)
         this.props.navigation.navigate('Address')
     }
-    consoleImage() {
-        console.log(this.state.photos)
-    }
+    
 
+    //  Tampilan gambar ketika sudah memilih gambar di choose images
     render() {
         if (this.state.imageBrowserOpen) {
             return (<ImageBrowser callback={this.imageBrowserCallback} />);
         }
         return (
             <View style={styles.container}>
-                <Button
-                    title="Choose Images"
-                    onPress={() => this.setState({ imageBrowserOpen: true })}
-                />
-                <Text>This is an example of a</Text>
-                <Text>multi image selector using expo</Text>
+                <View style={{ margin: 10 }}>
+                    <Button
+                        title="Choose Images"
+                        onPress={() => this.setState({ imageBrowserOpen: true })}
+                    />
+                </View>
                 <ScrollView>
                     {this.renderImage()}
                 </ScrollView>
-                <Button
-                    title="Choose Images"
-                    onPress={() => this.consoleImage()}
-                />
-                <Button
-                    title="Choose Images"
-                    onPress={() => this.formData()}
-                />
+                <View style={{ margin: 10 }}>
+
+                    <Button
+                        title="Continue"
+                        onPress={() => this.formData()}
+                    />
+                </View>
             </View>
         );
     }

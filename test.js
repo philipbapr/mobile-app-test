@@ -19,13 +19,7 @@ class MyComponent extends React.Component {
         <Appbar.Header style={styles.headerStyle}>
           <Appbar.Content>
           </Appbar.Content>
-
-          <Appbar.Action icon="archive" onPress={() => this.props.navigation.navigate('Camera')} />
-          <Appbar.Action icon="label" onPress={() => this.props.navigation.navigate('CameraRoll')} />
-          <Appbar.Action icon="map-search" onPress={() => this.props.navigation.navigate('Maps')} />
-          <Appbar.Action icon="map-search" onPress={() => this.props.navigation.navigate('Form')} />
-          <Appbar.Action icon="archive" onPress={() => this.props.navigation.navigate('Success')} />
-          <Appbar.Action icon="label" onPress={() => this.props.navigation.navigate('History')} />
+          <Appbar.Action icon="history" onPress={() => this.props.navigation.navigate('History')} />
 
         </Appbar.Header>
         <View style={{ justifyContent: 'center', alignContent: 'center', alignItems: 'center', marginTop: 20 }}>
