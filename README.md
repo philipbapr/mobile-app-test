@@ -28,7 +28,7 @@
     Pilih page, yang berisi list gambar yang diambil menggunakan cameraRoll
 
 ## 5. Sukses Page
-<img style="width : 50%;" src="./assets/pilih.png"></img>
+<img style="width : 50%;" src="./assets/sukses.png"></img>
 
     Sukses Page, hanya page ketika user berhasil upload image
 
