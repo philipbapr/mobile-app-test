@@ -1,26 +1,93 @@
-# Mobile Application Developer take home test
 
-The task is building photobooth apps, the application can do uploading and displaying uploaded file. The apps should notify the user after the uploading process already complete. It is not required to have login authentication, we don't focus on that. But you can use FCM with your phone credentials.
+# INTRODUCING PHOTOBOOTH APPLICATION
 
-## Requirement
-1. The system can upload multiple file at the same time. targeted 100 photos.
-2. The system must have FCM notification.
-3. For the backend side you can use anything you want, firebase also ok.
-4. Use Redux, Redux Saga or Redux Thunk for state management
-5. Make sure the code is clean and able to build on android and ios.
-6. Using third party like Ignite it's ok. 
-7. Do not commit on this repository. You must fork the test and submit pull request after you complete the test.
-8. Screen shot every page you made and attach it on the Readme, and also write short description about the page.
+## 1. Home Page
+<img style="width : 50%;" src="./assets/home.png"></img>
 
-## Assessment Point
-1. Code quality, clean, good state management = 50%
-2. Good documentation, Readme.md, Assumption.md = 10%
-3. Finished on time = 10%
+    Home Page pada halaman App merupakan halaman awal saat menggunakan App. 
+    - Tekan tombol Pilih gambar untuk memilih gambar.
+    - Tekan Tombol History icon untuk melihat history upload image
 
-## Point Plus
-1. Socket integration = 10%
-2. Jest integration = 10%
-3. GraphQl integration = 15%
-4. Other module integration = 10% , you should attach what you do with this and how it's work to support the application on your Assumption document.
 
-The minimum score to pass the test is 70, if you can doing perfect to comply the assessment point you can pass this test. The duration of the test is one week, if you want to extend the due date please call us.
+## 2. history Page
+<img style="width : 50%;" src="./assets/history.png"></img>
+
+    History Page, yang berisi list dari history upload image
+    - Disini kita hanya langsung mendapatkan list history saja
+
+    ps : Apabila hanya loading yang muncul, Kemungkinan koneksi internet anda kurang baik, atau aplikasi sedang memanggil API
+
+## 3. Notification 
+<img style="width : 50%;" src="./assets/notifikasi.png"></img>
+
+    Notifikasi muncul ketika user sukses untuk mengupload gambar ke backend
+
+## 4. Pilih Page
+<img style="width : 50%;" src="./assets/pilih.png"></img>
+
+    Pilih page, yang berisi list gambar yang diambil menggunakan cameraRoll
+
+## 5. Sukses Page
+<img style="width : 50%;" src="./assets/sukses.png"></img>
+
+    Sukses Page, hanya page ketika user berhasil upload image
+
+## 5. Form Page
+<img style="width : 50%;" src="./assets/form.png"></img>
+
+    Form Page,Page yang digunakan user untuk input identitas
+
+
+# How To Install The App ?
+
+1. clone The repository
+2. install all the package 
+        
+        $ yarn
+
+4. clear gradle
+
+        $ cd android && gradlew clean
+
+5. run App on your android device
+
+        $ react-native run-android
+
+    - if there any problems like
+
+            error Failed to install the app. Make sure you have an Android emulator running or a device connected.
+        
+    - make sure you have access to your android device or android emulator.
+
+    - and check the list of devices
+
+            $ adb devices
+    
+    - example response :
+
+            $ adb devices
+
+            List of devices attached
+            adb server version (41) doesn't match this client (39); killing...
+            * daemon started successfully
+            emulator-5554   device
+
+    - then go to step 5 to install the app on your devices
+
+    - if there are many devices on list
+    - example response : 
+
+            $ adb devices
+
+            List of devices attached
+            adb server version (41) doesn't match this client (39); killing...
+            * daemon started successfully
+            emulator-5554   device
+            emulator-5937   device
+    
+    - type this to install the App on selected devices
+
+            $ react-native run-android emulator-5937
+
+
+
