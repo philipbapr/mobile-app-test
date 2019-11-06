@@ -4,7 +4,7 @@ import ImageBrowser from '../../component/cameraRoll/imageBrowse';
 import { getPhotos } from '../../redux/actions/photos'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-
+import { FlatGrid } from 'react-native-super-grid';
 
 const numColumns = 3;
 const { width } = Dimensions.get('window')
@@ -70,7 +70,7 @@ class cameraRoll extends React.Component {
         this.props.getPhotos(this.state.photos)
         this.props.navigation.navigate('Address')
     }
-    
+
 
     //  Tampilan gambar ketika sudah memilih gambar di choose images
     render() {
@@ -86,15 +86,31 @@ class cameraRoll extends React.Component {
                     />
                 </View>
                 <ScrollView>
-                    {this.renderImage()}
-                </ScrollView>
-                <View style={{ margin: 10 }}>
-
-                    <Button
-                        title="Continue"
-                        onPress={() => this.formData()}
+                    <FlatGrid
+                        itemDimension={130}
+                        items={this.state.photos}
+                        style={styles.gridView}
+                        // staticDimension={300}
+                        // fixed
+                        // spacing={20}
+                        renderItem={({ item, index }) => (
+                            <View style={styles.itemContainer}>
+                                <Image source={{ uri: item.file }} style={{ width: 100, height: 100 }} />
+                            </View>
+                        )}
                     />
-                </View>
+                </ScrollView>
+                {
+                    this.state.photos.length == 0 ?
+                        null
+                        :
+                        <View style={{ margin: 10 }}>
+                            <Button
+                                title="Continue"
+                                onPress={() => this.formData()}
+                            />
+                        </View>
+                }
             </View>
         );
     }
@@ -115,6 +131,12 @@ const styles = StyleSheet.create({
     },
     itemInvisible: {
         backgroundColor: 'transparent',
+    },
+    itemContainer: {
+        justifyContent: 'flex-end',
+        borderRadius: 5,
+        padding: 10,
+        height: 150,
     },
     itemText: {
         color: '#fff',
