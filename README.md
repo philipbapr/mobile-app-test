@@ -1,5 +1,5 @@
 
-# INTRODUCING CHAT APPLICATION
+# INTRODUCING PHOTOBOOTH APPLICATION
 
 ## 1. Home Page
 <img style="width : 50%;" src="./assets/home.png"></img>
